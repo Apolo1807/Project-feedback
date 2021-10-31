@@ -1,0 +1,85 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-light">PROJETO FEEDBACK</a>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="/home"><i class="fa fa-home"></i> HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="/list"><i class="fa fa-film"></i> Lista</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="/profile"><i class="fa fa-user"></i> Ver perfil </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-info"></i> Sobre</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> Sair</a>
+    </li>
+  </ul>
+</nav>
+<div class="container tabela">
+  <div class="row">
+    <div class="col-4">
+      <select class="form-select form-select-sm">
+        <option selected> Filtrar por </option>
+        <option value="1"> Nome </option>
+        <option value="2"> Tipo </option>
+        <option value="3"> Categoria </option>
+      </select>
+    </div>
+    <div class="col-4">
+      <input type="text" class="form-control form-control-sm" placeholder="Filtro">
+    </div>
+    <div class="col-4">
+      <button class="btn btn-outline-dark btn-sm"><i class="fa fa-filter"></i> Aplicar filtro </button>
+    </div>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col"> # </th>
+        <th scope="col"> Nome </th>
+        <th scope="col"> Categoria </th>
+        <th scope="col"> Tipo </th>
+        <th scope="col"> Nota </th>
+        <th scope="col"> Feedback </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let movie of movies">
+        <th scope="row">{{ movie.id }}</th>
+        <td>{{ movie.nomeFilme }}</td>
+        <td>{{ movie.categoria }}</td>
+        <td>{{ movie.tipoFilme }}</td>
+        <td>{{ movie.nota }}</td>
+        <td>
+          <button class="btn btn-outline-info btn-circle me-2" data-bs-toggle="modal" data-bs-target="#modal-aba"> <i
+              class="fa fa-eye"></i> </button>
+          <button class="btn btn-outline-warning btn-circle me-2" routerLink="/list/{{movie.id}}"> <i class="fa fa-edit"></i> </button>
+          <button class="btn btn-outline-danger btn-circle me-2"> <i class="fa fa-trash"></i> </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="flutuante">
+    <button class="btn btn-success" routerLink="/new"> <i class="fa fa-plus"></i> </button>
+  </div>
+  <div class="funnyImage">
+    <img src="../../assets/icons/pipocaGuy.png" alt="pipocaGuy">
+  </div>
+</div>
+
+<div class="modal fade" id="modal-aba" tabindex="-1" aria-labelledby="modal" aria-hidden="true">
+  <div class="modal-dialog modal-xl">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="modal">Nome filme</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+    </div>
+  </div>
+</div>

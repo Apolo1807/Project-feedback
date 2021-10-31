@@ -1,0 +1,95 @@
+<nav class="navbar navbar-dark bg-dark">
+  <a class="navbar-brand text-light">PROJETO FEEDBACK</a>
+  <ul class="nav">
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="home"><i class="fa fa-home"></i> HOME</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" routerLink="list"><i class="fa fa-film"></i> Lista</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" aria-current="page" routerLink="/profile"><i class="fa fa-user"></i> Ver perfil </a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"><i class="fa fa-info"></i> Sobre</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#"> Sair</a>
+    </li>
+  </ul>
+</nav>
+<h1 class="display-4" style="text-align: center;">{{ movie.id? 'EDITANDO' : 'CRIANDO'}}</h1>
+<div class="container">
+  <div class="flutuante">
+    <button class="btn btn-success" routerLink="/list"><i class="fa fa-backward"></i></button>
+  </div>
+  <form class="p-4" #movieForm="ngForm" (ngSubmit)="onSubmit()">
+
+    <div class="row">
+      <div class="col-md-12">
+        <div class="alert alert-success" role="alert" *ngIf="success == true">
+          Filme salvo/atualizado com sucesso!
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-4">
+        <label for="form-label" class="form-label lead">Nome</label>
+        <input type="text" id="nomeFilme" [(ngModel)]="movie.nomeFilme" name="nomeFilme"
+          class="form-control form-control-sm" placeholder="Nome">
+      </div>
+      <div class="col-4">
+        <label for="dataFim" class="form-label lead"> Data de finalização </label>
+        <input type="date" id="dataFim" [(ngModel)]="movie.dataFim" name="dataFim" class="form-control form-control-sm">
+      </div>
+      <div class="col-4">
+        <label for="movieImage" class="form-label lead">Imagem</label>
+        <input type="file" id="movieImage" class="form-control form-control-sm">
+      </div>
+    </div>
+    <div class="row mt-3">
+      <div class="col-4">
+        <label for="categoria" class="form-label lead">Selecione a categoria</label>
+        <select id="categoria" [(ngModel)]="movie.categoria" name="categoria" class="form-select form-select-sm">
+          <option value="1">Ação</option>
+          <option value="2">Aventura</option>
+          <option value="3">Comédia</option>
+          <option value="4">Dança</option>
+          <option value="5">Documentário</option>
+          <option value="6">Drama</option>
+          <option value="7">Fantasia</option>
+          <option value="8">Ficção</option>
+          <option value="9">Musical</option>
+          <option value="10">Romance</option>
+          <option value="11">Terror</option>
+          <option value="12">Suspense</option>
+        </select>
+      </div>
+      <div class="col-4">
+        <label for="tipoFilme" class="form-label lead">Selecione o tipo</label>
+        <select id="tipoFilme" [(ngModel)]="movie.tipoFilme" name="tipoFilme" class="form-select form-select-sm">D
+          <option value="1" selected> Filme </option>
+          <option value="2"> Serie </option>
+          <option value="3"> Anime </option>
+        </select>
+      </div>
+      <div class="col-4">
+        <label for="nota" class="form-label lead">Nota: <span></span></label>
+        <input type="range" id="nota" [(ngModel)]="movie.nota" name="nota" class="form-range" value="0" max="10">
+      </div>
+      <div class="row mt-3">
+        <div class="col-auto">
+          <textarea id="descricao" [(ngModel)]="movie.descricao" name="descricao" cols="150" rows="10"
+            class="form-control" style="resize: none;"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+      <button class="btn btn-outline-success" type="submit"><i class="fa fa-save"></i> Salvar </button>
+    </div>
+  </form>
+  <div class="funnyImage">
+    <img src="../../assets/icons/tuzuki-confused.gif" alt="funny" class="img-fluid">
+  </div>
+</div>

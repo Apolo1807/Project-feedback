@@ -18,7 +18,7 @@ public class Fixtures {
         movieDTO.setCategoria(CategoriaFilme.ACAO);
         movieDTO.setNomeFilme("MATRIX");
         movieDTO.setDataFim(LocalDate.of(2021, 12, 31));
-        movieDTO.setFilme(TipoFilme.FILME);
+        movieDTO.setTipoFilme(TipoFilme.FILME);
         movieDTO.setNota(9L);
 
         return movieDTO;

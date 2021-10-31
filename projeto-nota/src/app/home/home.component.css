@@ -1,0 +1,31 @@
+.rounded-circle {
+  border: 1px #FFFFFF solid;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.nav-link {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  font-size: 1.1em;
+  transition: 0.2s;
+  border-bottom: 1px #FF0000 solid;
+}
+
+.active {
+  background-color: rgb(31, 31, 31);
+  border-left: 2px #FF0000 solid;
+}
+
+.dados {
+  bottom: 650px;
+  right: 700px;
+}
+
+.text {
+  border-left: 10px white solid;
+}

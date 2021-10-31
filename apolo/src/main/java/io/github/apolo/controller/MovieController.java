@@ -7,10 +7,13 @@ import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 @RestController
 @RequestMapping("/api/movies")
+@CrossOrigin(origins = "http://localhost:4200")
 public class MovieController {
 
     MovieRepository repository;
@@ -32,6 +35,11 @@ public class MovieController {
                 .orElseThrow(
                         () -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Filme não encontrado"
                 ));
+    }
+    
+    @GetMapping
+    public List<MovieDTO> findAll() {
+    	return repository.findAll();
     }
 
     @DeleteMapping("{id}")

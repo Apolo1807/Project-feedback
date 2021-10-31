@@ -1,7 +1,5 @@
 package io.github.apolo.dto;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import io.github.apolo.filmeEnum.CategoriaFilme;
 import io.github.apolo.filmeEnum.TipoFilme;
 import lombok.AllArgsConstructor;
@@ -33,13 +31,12 @@ public class MovieDTO {
     private String descricao;
 
     @Column(name = "tipo_filme")
-    private TipoFilme filme;
+    private TipoFilme tipoFilme;
 
     @Column(name = "categoria_filme")
     private CategoriaFilme categoria;
 
     @Column(name = "data_fim")
-    @JsonFormat(pattern = "dd/MM/yyyy")
     private LocalDate dataFim;
 
     @Column

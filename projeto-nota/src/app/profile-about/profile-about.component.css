@@ -1,0 +1,15 @@
+.nav-link {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  font-size: 1.05em;
+  transition: 0.2s;
+  border-bottom: 1px #FF0000 solid;
+}
+
+.active {
+  background-color: rgb(31, 31, 31);
+  border-left: 2px #FF0000 solid;
+}

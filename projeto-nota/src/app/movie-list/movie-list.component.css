@@ -1,0 +1,89 @@
+.rounded-circle {
+  border: 1px #FFFFFF solid;
+  border-radius: 50%;
+  width: 100px;
+  height: 100px;
+}
+
+.nav-link {
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.nav-link:hover {
+  font-size: 1.05em;
+  transition: 0.2s;
+  border-bottom: 1px #FF0000 solid;
+}
+
+.active {
+  background-color: rgb(31, 31, 31);
+  border-left: 2px #FF0000 solid;
+}
+
+.tabela {
+  margin-top: 100px;
+}
+
+.btn-circle {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding: 6px 0;
+  font-size: 12px;
+  line-height: 1.428571429;
+  border-radius: 15px;
+}
+
+.flutuante{
+  position: fixed;
+  bottom:10px;
+  right:10px;
+}
+
+
+.flutuante button{
+  cursor: pointer;
+  width: 58px;
+  height: 58px;
+  border-radius: 30px;
+  border: none;
+  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  font-size: 24px;
+  color: white;
+    
+  -webkit-transition: .2s ease-out;
+  -moz-transition: .2s ease-out;
+  transition: .2s ease-out;
+}
+
+.flutuante button:focus{
+  outline: none;
+}
+
+.flutuante button.main{
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+.form-control:focus{
+  border-color: #FF0000;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.form-select:focus {
+  border-color: #FF0000;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.funnyImage img {
+  max-width: 180px;
+  position: fixed;
+  bottom:0px;
+  left: 0px;
+}
