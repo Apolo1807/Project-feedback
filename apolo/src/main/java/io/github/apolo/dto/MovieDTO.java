@@ -27,7 +27,7 @@ public class MovieDTO {
     @NotEmpty
     private String nomeFilme;
 
-    @Column
+    @Column(length = 1000)
     private String descricao;
 
     @Column(name = "tipo_filme")

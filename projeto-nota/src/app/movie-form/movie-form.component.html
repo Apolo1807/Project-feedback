@@ -75,7 +75,7 @@
         </select>
       </div>
       <div class="col-4">
-        <label for="nota" class="form-label lead">Nota: <span></span></label>
+        <label for="nota" class="form-label lead">Nota: <span>{{movie.nota}}</span></label>
         <input type="range" id="nota" [(ngModel)]="movie.nota" name="nota" class="form-range" value="0" max="10">
       </div>
       <div class="row mt-3">
@@ -86,7 +86,9 @@
       </div>
     </div>
     <div class="d-flex justify-content-center mt-3">
-      <button class="btn btn-outline-success" type="submit"><i class="fa fa-save"></i> Salvar </button>
+      <button class="btn btn-outline-success" type="submit" *ngIf="!movie.id"><i class="fa fa-save"></i> Salvar
+      </button>
+      <button class="btn btn-outline-info" *ngIf="movie.id"><i class="fa fa-edit"></i> Editar </button>
     </div>
   </form>
   <div class="funnyImage">

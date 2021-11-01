@@ -35,3 +35,4 @@ export class MovieFormComponent implements OnInit {
     });
   }
 }
+

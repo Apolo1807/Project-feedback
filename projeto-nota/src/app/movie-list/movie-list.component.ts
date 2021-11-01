@@ -12,14 +12,27 @@ export class MovieListComponent implements OnInit {
 
   movie: MovieDTO;
   movies: MovieDTO[] = [];
+  movieSelected: MovieDTO;
+  success: String;
 
   constructor(
-    private service: MoviesService,
-    )
+    private service: MoviesService)
 
-    { this.movie = new MovieDTO();}
+  { this.movie = new MovieDTO();}
+
 
   ngOnInit(): void {
     this.service.getMovies().subscribe( response => this.movies = response );
+  }
+
+  openModal(movie: MovieDTO){
+    this.movieSelected = movie;
+  }
+
+  delete() {
+    this.service.deleteMovie(this.movieSelected).subscribe(response => {
+      this.success = 'Deletado com sucesso!'
+      this.ngOnInit();
+    })
   }
 }

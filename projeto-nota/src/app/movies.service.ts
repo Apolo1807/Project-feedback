@@ -24,4 +24,8 @@ export class MoviesService {
     return this.httpClient.get<any>(`http://localhost:8080/api/movies/${id}`);
   }
 
+  deleteMovie(movie: MovieDTO): Observable<any> {
+    return this.httpClient.delete<any>(`http://localhost:8080/api/movies/${movie.id}`);
+  }
+
 }

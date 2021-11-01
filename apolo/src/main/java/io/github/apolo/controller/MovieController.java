@@ -26,6 +26,7 @@ public class MovieController {
     @PostMapping("/new")
     @ResponseStatus(HttpStatus.CREATED)
     public MovieDTO salvarFilme(@RequestBody @Valid MovieDTO filme) {
+    	
         return repository.save(filme);
     }
 
@@ -47,7 +48,7 @@ public class MovieController {
         repository.deleteById(filme.getId());
     }
 
-    @PutMapping("/edit/{id}")
+    @PutMapping("{id}")
     public void editarFilme(@PathVariable Long id, @RequestBody @Valid MovieDTO dto) {
         repository.findById(id).map( movie -> {
             dto.setId(movie.getId());
