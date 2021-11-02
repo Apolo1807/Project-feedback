@@ -1,31 +1,123 @@
-.rounded-circle {
-  border: 1px #FFFFFF solid;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-
-.nav-link {
-  color: #FFFFFF;
-  font-size: 14px;
+.nav-link, .linkprofile{
+  color: white;
+  padding: 0px 0px 0px 10px;
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 .nav-link:hover {
+  border-bottom: 2px solid white;
+  transition: ease-in 200ms;
   font-size: 1.1em;
-  transition: 0.2s;
-  border-bottom: 1px #FF0000 solid;
+}
+
+.linkprofile:hover {
+  transition: ease-in 200ms;
+  font-size: 1.1em;
 }
 
 .active {
-  background-color: rgb(31, 31, 31);
-  border-left: 2px #FF0000 solid;
+  border-left: 2px solid white;
 }
 
-.dados {
-  bottom: 650px;
-  right: 700px;
+/* BODY */
+
+.animated {
+  text-align: center;
+  opacity: 0;
+  animation: fadeInText 0s 1.1s both;
 }
 
-.text {
-  border-left: 10px white solid;
+.block {
+  position: relative;
+  overflow: hidden;
+}
+
+.block::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #413f3f;
+  transform: translateX(-100%);
+  animation: enLargeBlock .5s .6s both, revealBlock .5s 1.1s both;
+}
+
+@keyframes fadeInText {
+
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes enLargeBlock {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+
+}
+
+@keyframes revealBlock {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(100%);
+  }
+
+}
+
+/* write animation */
+
+.infos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.first {
+  border-right: 2px solid black;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.typing-animation {
+  animation: blinkCursor 500ms  steps(40) infinite normal, typing 4s steps(40) 1s normal;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  } to {
+    width: 40em;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: black;
+  } to {
+    border-right-color: transparent;
+  }
+}
+
+/* REDE */
+
+.redes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.redes a {
+  text-decoration: none;
+  color: black;
 }

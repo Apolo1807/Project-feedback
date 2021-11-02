@@ -1,24 +1,24 @@
-.rounded-circle {
-  border: 1px #FFFFFF solid;
-  border-radius: 50%;
-  width: 100px;
-  height: 100px;
-}
-
-.nav-link {
-  color: #FFFFFF;
-  font-size: 14px;
+.nav-link,
+.linkprofile {
+  color: white;
+  padding: 0px 0px 0px 10px;
+  margin-left: 10px;
+  text-decoration: none;
 }
 
 .nav-link:hover {
-  font-size: 1.05em;
-  transition: 0.2s;
-  border-bottom: 1px #FF0000 solid;
+  border-bottom: 2px solid white;
+  transition: ease-in 200ms;
+  font-size: 1.1em;
+}
+
+.linkprofile:hover {
+  transition: ease-in 200ms;
+  font-size: 1.1em;
 }
 
 .active {
-  background-color: rgb(31, 31, 31);
-  border-left: 2px #FF0000 solid;
+  border-left: 2px solid white;
 }
 
 .tabela {
@@ -35,7 +35,7 @@
   border-radius: 15px;
 }
 
-.form-control:focus{
+.form-control:focus {
   border-color: #FF0000;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
 }
@@ -45,33 +45,33 @@
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
 }
 
-.flutuante{
+.flutuante {
   position: fixed;
   top: 70px;
   left: 10px;
 }
 
 
-.flutuante button{
+.flutuante button {
   cursor: pointer;
   width: 58px;
   height: 58px;
   border-radius: 30px;
   border: none;
-  box-shadow: 0 1px 5px rgba(0,0,0,.4);
+  box-shadow: 0 1px 5px rgba(0, 0, 0, .4);
   font-size: 24px;
   color: white;
-    
+
   -webkit-transition: .2s ease-out;
   -moz-transition: .2s ease-out;
   transition: .2s ease-out;
 }
 
-.flutuante button:focus{
+.flutuante button:focus {
   outline: none;
 }
 
-.flutuante button.main{
+.flutuante button.main {
   position: absolute;
   width: 60px;
   height: 60px;
